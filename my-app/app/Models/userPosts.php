@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class userPosts extends Model
 {
+    /** Get the user that owns the post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     /** The table associated with the model.
      *
      * @var string
