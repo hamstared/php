@@ -14,9 +14,12 @@
         <h2>Posts</h2>
             <ul>
                 @foreach ($posts as $post)
-                    <h2>{{ $post->title }}</h2>
-                    <p>{{ $post->content }}</p>
-                    <p>Posted on: {{ $post->created_at }}</p>
+                    <li>
+                        <h3>{{ $post->title }}</h3>
+                        <p>{{ $post->content }}</p>
+                        <p>By: {{ $post->user->name ?? 'Unknown' }}</p>
+                        <p>Posted on: {{ $post->created_at }}</p>
+                    </li>
                 @endforeach
             </ul>
         </div>

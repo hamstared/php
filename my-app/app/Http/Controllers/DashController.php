@@ -9,7 +9,10 @@ class DashController extends Controller
 {
     public function index()
     {
-        $posts = userPosts::select('title', 'content', 'created_at')->orderBy('created_at', 'desc')->get();
+        $posts = userPosts::with('user')
+            ->select('title', 'content', 'created_at', 'user_id')
+            ->orderBy('created_at', 'desc')
+            ->get();
         return view('dashboard', compact('posts'));
     }
 
