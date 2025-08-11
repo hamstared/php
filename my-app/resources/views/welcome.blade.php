@@ -7,6 +7,11 @@
 </head>
 
 <body>
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <div class="container">
         <h1>Login</h1>
         <form method="POST" action="/login">

@@ -15,3 +15,6 @@ Route::get('/login', [LoginController::class, 'showLoginForm']);
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/dashboard', [DashController::class, 'index'])->middleware('auth');
+
+Route::get('/posts', [DashController::class, 'showPosts'])->middleware('auth');
+Route::post('/posts', [DashController::class, 'storePost'])->middleware('auth');
