@@ -1,7 +1,17 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/register', [LoginController::class, 'showRegisterForm']);
+Route::post('/register', [LoginController::class, 'register']);
+
+Route::get('/login', [LoginController::class, 'showLoginForm']);
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::get('/dashboard', [DashController::class, 'index'])->middleware('auth');
