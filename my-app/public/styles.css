@@ -1,0 +1,83 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: 0; /* Align container to the left */
+    margin-right: auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align all items to the left */
+    min-height: 100vh;
+}
+
+.page-title {
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: 0; /* Align title to the left */
+    margin-right: auto;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+}
+
+.login-title {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.posts-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.post-item {
+    border: 5px solid #333;
+    margin-bottom: 5px;
+    padding: 10px 10px;
+    margin-left: 0px;
+    width: 100%;
+    text-align: left;
+}
+
+.section-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Arial', sans-serif;
+}

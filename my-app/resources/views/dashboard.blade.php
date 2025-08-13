@@ -7,19 +7,20 @@
             document.getElementById('postForm').style.display = 'block';
         }
     </script>
+    <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
-    <h1>Welcome to the Dashboard</h1>
-    <div class="posts">
-        <h2>Posts</h2>
+    <h1 class="page-title">Welcome to the Dashboard</h1>
+    <div class="posts-row">
+        <h2 class="section-title">Posts</h2>
             <ul>
                 @foreach ($posts as $post)
-                    <li>
+                    <div class="post-item">
                         <h3>{{ $post->title }}</h3>
                         <p>{{ $post->content }}</p>
                         <p>By: {{ $post->user->name ?? 'Unknown' }}</p>
                         <p>Posted on: {{ $post->created_at }}</p>
-                    </li>
+                    </div>
                 @endforeach
             </ul>
         </div>
@@ -28,11 +29,11 @@
             @csrf
             <input type="hidden" name="user_id" value="{{ Auth::id() }}">
             <div>
-                <label for="title">Title:</label>
+                <label class="form-label" for="title">Title:</label>
                 <input type="text" name="title" id="title" required>
             </div>
             <div>
-                <label for="content">Content:</label>
+                <label class="form-label" for="content">Content:</label>
                 <textarea name="content" id="content" required></textarea>
             </div>
             <button type="submit">Publish</button>
