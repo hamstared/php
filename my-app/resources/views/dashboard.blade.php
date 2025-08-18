@@ -1,3 +1,12 @@
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +24,29 @@
         <h2 class="section-title">Posts</h2>
             <ul>
                 @foreach ($posts as $post)
-                    <div class="post-item">
+                    <li class="post-item">
                         <h3>{{ $post->title }}</h3>
                         <p>{{ $post->content }}</p>
                         <p>By: {{ $post->user->name ?? 'Unknown' }}</p>
                         <p>Posted on: {{ $post->created_at }}</p>
-                    </div>
+                        <div class='comments' action="/comments">
+                            <h4>Comments:</h4>
+                            @foreach ($post->comments as $comment)
+                                <div class="comment">
+                                    <strong>{{ $comment->user->name ?? 'Unknown' }}:</strong>
+                                    {{ $comment->content }}
+                                    <br>
+                                    <small>By: {{ $comment->user->name ?? 'Unknown' }} at {{ $comment->created_at }}</small>
+                                </div>
+                            @endforeach
+                            <form method="POST" action="/comments">
+                                @csrf
+                                <input type="hidden" name="user_post_id" value="{{ $post->id }}">
+                                <textarea name="content" required></textarea>
+                                <button type="submit">Add Comment</button>
+                            </form>
+                        </div>
+                    </li>
                 @endforeach
             </ul>
         </div>
