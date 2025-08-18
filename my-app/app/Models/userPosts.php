@@ -15,6 +15,11 @@ class userPosts extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_post_id');
+    }
+
     /** The table associated with the model.
      *
      * @var string
