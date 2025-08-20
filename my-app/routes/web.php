@@ -22,3 +22,5 @@ Route::post('/posts', [DashController::class, 'storePost'])->middleware('auth');
 
 Route::get('/comments/{postId}', [CommentController::class, 'show'])->middleware('auth');
 Route::post('/comments', [CommentController::class, 'store'])->middleware('auth');
+
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');

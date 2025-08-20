@@ -44,6 +44,15 @@
                 @endforeach
             </ul>
         </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <form method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="bg-red-700 text-white font-semibold py-2 px-4 rounded hover:bg-blue-200 transition">
+                    Sign out
+                </button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
