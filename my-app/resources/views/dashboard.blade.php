@@ -17,7 +17,7 @@
             <x-alert :errors="$errors" />
         @endif
 
-        <div class="text-3xl font-bold text-center mb-6 text-blue-700">Welcome to the Dashboard</div>
+        <div class="mt-8 text-3xl font-bold text-center mb-6 text-blue-700">Welcome to the Dashboard</div>
 
         <div class="bg-white p-8 rounded-lg shadow-md mb-8">
             <button class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700 transition mb-4" onclick="showPostForm()">Create a new post</button>
